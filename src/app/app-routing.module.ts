@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { TemplatesComponent } from './pages/templates/templates.component';
+import { ReactiveComponent } from './pages/reactive/reactive.component';
+
+const routes: Routes = [
+  { path: 'template', component: TemplatesComponent },
+  { path: 'reactivo', component: ReactiveComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'template' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
