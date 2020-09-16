@@ -10,7 +10,10 @@
           type="text"
           placeholder="Nombre"
           formControlName="nombre"
+          [class.is-invalid]="nombreNoValido"
         />
+
+        <small>Ingrese 5 letras</small>
       </div>
     </div>
 
@@ -48,3 +51,8 @@
     </div>
   </div>
 </form>
+
+<hr />
+<pre>Estado del formulario. {{ forma.valid }}<br>status: {{ forma.status }}</pre>
+
+<pre>{{ forma.value | json }}</pre>
